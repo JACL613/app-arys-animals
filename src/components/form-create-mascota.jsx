@@ -1,6 +1,6 @@
 import {postMascota} from '../services/mascots.services';
 import React, { useState } from "react";
-
+  
 export function CreateMascota({ handelUrl }) {
   const [file, setFile] = useState();
   const [name, setName] = useState();
