@@ -1,4 +1,4 @@
-import axios from "axios";
+import {postMascota} from '../services/mascots.services';
 import React, { useState } from "react";
 
 export function CreateMascota({ handelUrl }) {
@@ -39,10 +39,7 @@ export function CreateMascota({ handelUrl }) {
     data.append("categoria", categoria);
     // console.log(data);
 
-    axios
-      .post("http://localhost:3008/api/mascotas", data)
-      .then((res) => handelUrl(res.data))
-      .catch((err) => console.log(err));
+    postMascota(data)
 
     setName("");
     setFile("");
