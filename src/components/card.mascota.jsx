@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getAllM } from "../services/mascots.services";
-import img_1 from "../assets/imgs/img1.jpg";
-import img_2 from "../assets/imgs/img2.jpg";
 
-export function CardMascotas({ modal, setMascotaSelect }) {
-  const arrays = [img_1, img_2];
-  const [mascotas, setMascotas] = useState();
+export function CardMascotas({
+  mascotas,
+  setMascotas,
+  modal,
+  setMascotaSelect
+}) {
   const actionAdoptar = ({ mascota }) => {
-    // console.log("adoptado", mascota);
     const { nombre, id } = mascota;
-    console.log(nombre);
-    console.log(id);
-
     setMascotaSelect({ nombre, id });
     modal.show();
   };
@@ -24,17 +21,22 @@ export function CardMascotas({ modal, setMascotaSelect }) {
     obtener();
   }, []);
   return (
-    <div>
+    <div
+      className="d-flex overflow-auto my-2  corrouselo"
+      style={{ maxWidth: "100vw" }}>
       {!mascotas
         ? null
         : mascotas.map((mascota) => {
             return (
-              <div className="card" style={{ width: "18rem" }}>
+              <div
+                key={mascota.id}
+                className="card mx-1"
+                style={{ width: "18rem" }}>
                 <img
-                  src={arrays[mascota.refImg - 1]}
-                  className="card-img-top"
+                  src={`${process.env.REACT_APP_BASE_URL_IMG}${mascota.refImg}`}
+                  className="card-img-top img-fluid"
                   alt="..."
-                  style={{ maxHeight: "15rem" }}
+                  style={{ maxHeight: "11rem", minHeight: "11rem" }}
                 />
                 <div className="card-body">
                   <h5 className="card-title">nombre: {mascota.nombre}</h5>

@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3008/api/mascotas";
+const baseUrl = `${process.env.REACT_APP_BASE_URL}api/mascotas`;
 
 export const getAllM = async () => {
   const mascotas = axios.get(`${baseUrl}/`);

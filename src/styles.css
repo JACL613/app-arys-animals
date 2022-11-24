@@ -2,3 +2,31 @@
   font-family: sans-serif;
   text-align: center;
 }
+#mascota {
+  position: absolute;
+}
+/* #carouselExampleControls {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  width: 100vw;
+  height: 80vh;
+} */
+.carousel-inner {
+  max-height: 90vh;
+}
+.edit-img {
+  margin: 0 auto;
+  width: min-content;
+  height: min-content;
+  max-height: 90vh;
+}
+#cubre-carousel {
+  position: absolute;
+  opacity: 0.5;
+}
+.auto-my {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+}
