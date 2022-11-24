@@ -31,7 +31,7 @@ export function CardMascotas({
               <div
                 key={mascota.id}
                 className="card mx-1"
-                style={{ width: "18rem" }}>
+                style={{ width: "18rem" , minWidth: "18rem" }}>
                 <img
                   src={`${process.env.REACT_APP_BASE_URL_IMG}${mascota.refImg}`}
                   className="card-img-top img-fluid"
