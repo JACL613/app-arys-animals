@@ -1,7 +1,9 @@
-import {postMascota} from '../services/mascots.services';
+import axios from "axios";
 import React, { useState } from "react";
-  
+
 export function CreateMascota({ handelUrl }) {
+const baseUrl = `${process.env.REACT_APP_BASE_URL}api/mascotas`;
+
   const [file, setFile] = useState();
   const [name, setName] = useState();
   const [edad, setEdad] = useState();
@@ -39,7 +41,10 @@ export function CreateMascota({ handelUrl }) {
     data.append("categoria", categoria);
     // console.log(data);
 
-    postMascota(data)
+    axios
+      .post(baseUrl, data)
+      .then((res) => handelUrl(res.data))
+      .catch((err) => console.log(err));
 
     setName("");
     setFile("");

@@ -6,7 +6,7 @@ export const getAllM = async () => {
   return mascotas.then((response) => response.data);
 };
 export const postMascota = (data) => {
-  const mascota = axios.post("http://localhost:3008/api/mascotas", data)
+  const mascota = axios.post(baseUrl, data)
      return mascota.then((res) => handelUrl(res.data))
       .catch((err) => console.log(err));
 }
