@@ -5,9 +5,9 @@ export function Navigator({ title, user, functionCloseSesion, logo }) {
     <nav className="navbar navbar-expand-lg navbar-light bg-primary ">
       <div className="container-fluid ">
         <Link className="navbar-brand" to="/">
-        {logo 
-        ?<img src={logo} alt="logo-principal" width="40" height="34" />
-        :null}
+          {logo ? (
+            <img src={logo} alt="logo-principal" width="40" height="34" />
+          ) : null}
           {title ? title : "Titulo"}
         </Link>
         <button
@@ -17,22 +17,19 @@ export function Navigator({ title, user, functionCloseSesion, logo }) {
           data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="container ">
           <div
             className="collapse navbar-collapse float-end"
-            id="navbarNavDropdown">
+            id="navbarNavDropdown"
+          >
             <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="Mascotas">
-                  Mascotas
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -41,17 +38,20 @@ export function Navigator({ title, user, functionCloseSesion, logo }) {
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   Configuraciones
                 </Link>
                 <ul
                   className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink">
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
                   <li>
                     <Link
                       to="/administracion"
                       className="dropdown-item"
-                      href="#">
+                      href="#"
+                    >
                       Administracion
                     </Link>
                   </li>
@@ -61,7 +61,8 @@ export function Navigator({ title, user, functionCloseSesion, logo }) {
                         to="/"
                         onClick={functionCloseSesion}
                         className="dropdown-item"
-                        href="#">
+                        href="#"
+                      >
                         Salir
                       </Link>
                     </li>

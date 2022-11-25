@@ -5,27 +5,19 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
 import App from "./App";
 import { Admin } from "./admin";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
-  },
-  {
-    path: "/Mascotas",
-    element: (
-      <div>
-        <h1>About</h1>
-      </div>
-    )
+    element: <App />,
   },
   {
     path: "/administracion",
-    element: <Admin />
-  }
+    element: <Admin />,
+  },
 ]);
 
 const rootElement = document.getElementById("root");
