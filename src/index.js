@@ -15,14 +15,6 @@ const router = createBrowserRouter([
     element: <App />
   },
   {
-    path: "/Mascotas",
-    element: (
-      <div>
-        <h1>About</h1>
-      </div>
-    )
-  },
-  {
     path: "/administracion",
     element: <Admin />
   }

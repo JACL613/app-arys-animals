@@ -30,11 +30,6 @@ export function Navigator({ title, user, functionCloseSesion, logo }) {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="Mascotas">
-                  Mascotas
-                </Link>
-              </li>
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
